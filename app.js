@@ -7,7 +7,7 @@ const logger = require('morgan');
 const mongoose = require('mongoose');
 const indexRouter = require('./routes/index');
 // const seeds = require('./bin/seeds.js');
-// const Movies = require('./models/Movies.js');
+const Movies = require('./models/Movies.js');
 
 const app = express();
 
@@ -17,8 +17,8 @@ mongoose.connect('mongodb://localhost/cinema', {
   reconnectTries: Number.MAX_VALUE
 });
 
-// Movies.insertOne({ title: 'tiburon 5' }, { director: 'joe' }, { stars: ['billy'] }, { image: 'hola' }, { description: 'descripcion' },
-// { showtimes: ['10:00', '22:00'] });
+Movies.insertOne({ title: 'tiburon 5' }, { director: 'joe' }, { stars: ['billy'] }, { image: 'hola' }, { description: 'descripcion' },
+  { showtimes: ['10:00', '22:00'] });
 
 // Movies.insertMany(seeds)
 //   .then(result => {

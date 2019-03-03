@@ -1,7 +1,42 @@
 'use strict';
+const mongoose = require('mongoose');
+// const Movies = require('../models/Movies');
+// ----------------------
 
-module.exports =
-[
+const Schema = mongoose.Schema;
+
+const movieSchema = new Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  director: {
+    type: String,
+    required: true
+  },
+  stars: {
+    type: [String],
+    required: true
+  },
+  image: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  showTimes: {
+    type: [String],
+    required: true
+  }
+});
+const Movies = mongoose.model('Movies', movieSchema);
+// module.export = Movies;
+
+// ------------------------
+
+const seeds = [
   {
     title: 'A Wrinkle in Time',
     director: 'Ava DuVernay',
@@ -67,3 +102,18 @@ module.exports =
     showtimes: ['13:00', '15:30', '18:00', '20:10', '22:40']
   }
 ];
+
+mongoose.connect('mongodb://localhost/cinema', {
+  keepAlive: true,
+  useNewUrlParser: true,
+  reconnectTries: Number.MAX_VALUE
+});
+//console.log(Movies);
+// User.insertMany(JSON.parse(data))
+
+Movies.insertMany(seeds)
+  .then(result => {
+    console.log('inserted');
+    mongoose.connection.close();
+  })
+  .catch(err => console.log('Error' + err));
