@@ -1,0 +1,29 @@
+body{
+  background-color: brown;
+}
+#principal{
+  background-color: brown;
+  height: 400px;
+  width: 700px;
+  margin: 100px;
+}
+h1{
+  color: whitesmoke;
+}
+h2{
+  color: whitesmoke;
+}
+h2{
+  color: whitesmoke;
+}
+#divimage{
+  width: 20vw;
+  height: 80vh;
+}
+#divTexto{
+  width: 80vw;
+  height: 80vh;
+  float: left;
+}
+
+

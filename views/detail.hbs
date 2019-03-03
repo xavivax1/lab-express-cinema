@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../public/stylesheets/styleA.css">
+  <link rel="stylesheet" href="../public/stylesheets/detail.css">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
- 
-</head>
+ </head>
 <body>
- <img src="{{image}}" alt="">
-<h1>{{title}}</h1>
-<h2>Director: {{director}}</h2>
-<h3>Stars</h3>
-{{#each stars}}
-  <h3>* {{stars}}</h3>
-{{/each}}
-<h3>{{description}}</h3>
+  <div id=principal></div>
+    <div id=divImage>
+      <img src="{{image}}" alt="">
+    </div>
+    <div id=divTexto>
+      <h1>{{title}}</h1>
+      <h2>Director: {{director}}</h2>
+      <h3>Stars</h3>
+      {{#each stars}}
+        <h3>* {{stars}}</h3>
+      {{/each}}
+      <h3>{{description}}</h3>
+    </div>
 <h3>showtimes</h3>
 
 </body>

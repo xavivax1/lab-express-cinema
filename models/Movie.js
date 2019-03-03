@@ -1,6 +1,6 @@
 'use strict';
-const mongoose = require('mongoose');
 
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const movieSchema = new Schema({
@@ -13,7 +13,7 @@ const movieSchema = new Schema({
     required: true
   },
   stars: {
-    type: [String],
+    type: Array,
     required: true
   },
   image: {
@@ -24,10 +24,12 @@ const movieSchema = new Schema({
     type: String,
     required: true
   },
-  showTimes: {
-    type: [String],
+  showtimes: {
+    type: Array,
     required: true
   }
 });
-const Movies = mongoose.model('Movies', movieSchema);
-module.export = Movies;
+
+const Movie = mongoose.model('Movie', movieSchema);
+
+module.exports = Movie;

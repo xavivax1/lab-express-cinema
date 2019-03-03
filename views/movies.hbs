@@ -1,14 +1,14 @@
-<h1>Movies list</h1>
+<h1>Films scheduled</h1>
 
 <ul>
-  {{#each Movies}}
-  <li>
-    
-    <img src="{{this.image}}" alt="image">
-    <a href="">{{this.title}}</a>
-    <a href="{{this._id}}">See more</a>
-
-  </li>
-
+   {{#each movies}}
+  <div id=container>
+  <li id=classList>
+    <img src="{{image}}" alt="image">
+    <a href="detail/{{this._id}}">See more!</a>
+ </li>
+ </div>
   {{/each}}
 </ul>
+
+  
