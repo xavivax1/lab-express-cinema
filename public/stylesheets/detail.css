@@ -1,11 +1,9 @@
-body{
-  background-color: brown;
-}
+
 #principal{
-  background-color: brown;
-  height: 400px;
-  width: 700px;
-  margin: 100px;
+  padding: 10px;
+  height: 80wh;
+  width: 80vw;
+  margin: 10px;
 }
 h1{
   color: whitesmoke;
@@ -13,17 +11,24 @@ h1{
 h2{
   color: whitesmoke;
 }
-h2{
+h3{
   color: whitesmoke;
 }
-#divimage{
-  width: 20vw;
-  height: 80vh;
+li {
+  color: whitesmoke;
+}
+#divImage{
+  width: 40vw;
+  height: 40vh;
+  
 }
 #divTexto{
-  width: 80vw;
-  height: 80vh;
   float: left;
+  width: 350px;
+  height: 500px;
+}
+#divTexto h1{
+  font-size: 2em;
 }
 
 

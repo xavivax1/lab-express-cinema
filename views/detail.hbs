@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
  </head>
 <body>
-  <div id=principal></div>
+  <div id=principal>
     <div id=divImage>
       <img src="{{image}}" alt="">
     </div>
@@ -15,12 +15,21 @@
       <h1>{{title}}</h1>
       <h2>Director: {{director}}</h2>
       <h3>Stars</h3>
+      <ul>
       {{#each stars}}
-        <h3>* {{stars}}</h3>
+        <li>{{this}}</li>
       {{/each}}
+      </ul>
       <h3>{{description}}</h3>
+      <h3>Showtimes</h3>
+      <ul>
+      {{#each showtimes}}
+         <li>{{this}}</li>
+      {{/each}}
+      </ul>
     </div>
-<h3>showtimes</h3>
+  </div>
+    
 
 </body>
 </html>

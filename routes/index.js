@@ -16,7 +16,6 @@ router.get('/detail/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const movie = await Movie.findById(id);
-    console.log(movie);
     res.render('detail', movie);
   } catch (error) {
     next(error);
