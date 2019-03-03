@@ -5,8 +5,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
-
 const indexRouter = require('./routes/index');
+// const seeds = require('./bin/seeds.js');
+// const Movies = require('./models/Movies.js');
 
 const app = express();
 
@@ -15,6 +16,17 @@ mongoose.connect('mongodb://localhost/cinema', {
   useNewUrlParser: true,
   reconnectTries: Number.MAX_VALUE
 });
+
+// Movies.insertOne({ title: 'tiburon 5' }, { director: 'joe' }, { stars: ['billy'] }, { image: 'hola' }, { description: 'descripcion' },
+// { showtimes: ['10:00', '22:00'] });
+
+// Movies.insertMany(seeds)
+//   .then(result => {
+//     console.log('inserted');
+//     mongoose.connection.close();
+//   })
+//   .catch(err => console.log('Error' + err));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -26,6 +38,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+
+// app.use('/', indexRouter);
 // -- 404 and error handler
 
 // NOTE: requires a views/not-found.ejs template
@@ -46,4 +60,5 @@ app.use((err, req, res, next) => {
   }
 });
 
-module.exports = app;
+app.listen(3000, () => console.log('movies running on 3000'));
+// module.exports = app;
